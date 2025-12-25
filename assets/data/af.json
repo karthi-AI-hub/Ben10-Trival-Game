@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "image": "assets/data/aliens/af/swampfire.webp",
+        "question": "I am the first alien Ben transformed into in Alien Force. I control fire and plants, and I can regenerate my body. Who am I?",
+        "answer": "Swampfire"
+    },
+    {
+        "id": 2,
+        "image": "assets/data/aliens/af/echo_echo.webp",
+        "question": "I am a small alien made of silicon. I can scream sonic waves and create endless clones of myself. Who am I?",
+        "answer": "Echo Echo"
+    },
+    {
+        "id": 3,
+        "image": "assets/data/aliens/af/humungousaur.webp",
+        "question": "I am a Vaxasaurian. I possess immense strength and can grow up to 60 feet tall to crush my enemies. Who am I?",
+        "answer": "Humungousaur"
+    },
+    {
+        "id": 4,
+        "image": "assets/data/aliens/af/jetray.webp",
+        "question": "I can fly at supersonic speeds in the air and water, and I shoot neuroshock blasts from my eyes and tail. Who am I?",
+        "answer": "Jetray"
+    },
+    {
+        "id": 5,
+        "image": "assets/data/aliens/af/big_chill.webp",
+        "question": "I am a moth-like alien who can phase through solid matter and freeze enemies with my breath. Who am I?",
+        "answer": "Big Chill"
+    },
+    {
+        "id": 6,
+        "image": "assets/data/aliens/af/chromastone.webp",
+        "question": "I am a crystal guardian who can absorb energy attacks and fire them back as multi-colored blasts. Who am I?",
+        "answer": "Chromastone"
+    },
+    {
+        "id": 7,
+        "image": "assets/data/aliens/af/brainstorm.webp",
+        "question": "I am a hyper-intelligent crab. I can solve complex physics equations and shoot electricity from my brain. Who am I?",
+        "answer": "Brainstorm"
+    },
+    {
+        "id": 8,
+        "image": "assets/data/aliens/af/spidermonkey.webp",
+        "question": "I have four arms and a tail, and I act like a monkey. I can shoot strong webs from my tail. Who am I?",
+        "answer": "Spidermonkey"
+    },
+    {
+        "id": 9,
+        "image": "assets/data/aliens/af/goop.webp",
+        "question": "I am a polymorph made of living slime. I need my anti-gravity projector to stand up and move. Who am I?",
+        "answer": "Goop"
+    },
+    {
+        "id": 10,
+        "image": "assets/data/aliens/af/alien_x.webp",
+        "question": "I am a Celestialsapien. I can do anything, but I must first get my two internal personalities to agree. Who am I?",
+        "answer": "Alien X"
+    },
+    {
+        "id": 11,
+        "image": "assets/data/aliens/af/lodestar.webp",
+        "question": "I control magnetic fields and can regenerate my body even if I am blown to pieces. Who am I?",
+        "answer": "Lodestar"
+    },
+    {
+        "id": 12,
+        "image": "assets/data/aliens/af/rath.webp",
+        "question": "Let me tell you something! I am an Appoplexian who loves to wrestle and gets angry at everything! Who am I?",
+        "answer": "Rath"
+    },
+    {
+        "id": 13,
+        "image": "assets/data/aliens/af/nanomech.webp",
+        "question": "I am half-drone, half-human, created to fight the swarm. I can shrink to microscopic sizes. Who am I?",
+        "answer": "Nanomech"
+    },
+    {
+        "id": 14,
+        "image": "assets/data/aliens/af/cannonbolt_af_redesign.webp",
+        "question": "I returned in Alien Force with the Omnitrix symbol on my chest. I still roll into a ball to attack. Who am I?",
+        "answer": "Cannonbolt"
+    },
+    {
+        "id": 15,
+        "image": "assets/data/aliens/af/way_big_af_redesign.webp",
+        "question": "I returned to fight the Highbreed invasion. I am the tallest alien Ben has. Who am I?",
+        "answer": "Way Big"
+    },
+    {
+        "id": 16,
+        "image": "assets/data/aliens/af/upchuck_murk_redesign.webp",
+        "question": "I am the 'Murk' subspecies of Upchuck. I have darker skin than the classic Perk version. Who am I?",
+        "answer": "Upchuck"
+    },
+    {
+        "id": 17,
+        "image": "assets/data/aliens/af/diamondhead_chromastone_rebirth.webp",
+        "question": "When Chromastone was destroyed by Vilgax, I emerged from the shards to defeat him. Who am I?",
+        "answer": "Diamondhead"
+    },
+    {
+        "id": 18,
+        "image": "assets/data/aliens/af/ghostfreak_af_redesign.webp",
+        "question": "I tried to take over Ben's body again in Alien Force. I am the Ectonurite form. Who am I?",
+        "answer": "Ghostfreak"
+    },
+    {
+        "id": 19,
+        "image": "assets/data/aliens/af/highbreed_transformation.webp",
+        "question": "I was the supreme commander of the invasion until Ben repaired my DNA and cured my species. Who am I?",
+        "answer": "Highbreed"
+    },
+    {
+        "id": 20,
+        "image": "assets/data/aliens/af/feedback_the_lost_alien.webp",
+        "question": "I was Ben's favorite alien at age 11, but Malware destroyed me, removing me from the Omnitrix. Who am I?",
+        "answer": "Feedback"
+    },
+    {
+        "id": 21,
+        "image": "assets/data/aliens/af/albedo_ben_clone.webp",
+        "question": "I am not an alien, but a Galvan trapped in a negative copy of Ben's human form. I love chili fries. Who am I?",
+        "answer": "Albedo"
+    }
+]

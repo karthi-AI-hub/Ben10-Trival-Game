@@ -1,0 +1,140 @@
+[
+    {
+        "id": 1,
+        "image": "assets/data/aliens/ov/feedback.webp",
+        "question": "I am a Conductoid. I can absorb any kind of energy through my plugs and shoot it back. I am Ben's favorite. Who am I?",
+        "answer": "Feedback"
+    },
+    {
+        "id": 2,
+        "image": "assets/data/aliens/ov/bloxx.webp",
+        "question": "I look like I am made of building blocks. I can stretch, fold, and rebuild my body into cages or walls. Who am I?",
+        "answer": "Bloxx"
+    },
+    {
+        "id": 3,
+        "image": "assets/data/aliens/ov/gravattack.webp",
+        "question": "I am a living planetoid. I can manipulate gravity to make things heavy or light, or create an orbit. Who am I?",
+        "answer": "Gravattack"
+    },
+    {
+        "id": 4,
+        "image": "assets/data/aliens/ov/crashhopper.webp",
+        "question": "I have powerful legs that let me jump immense distances. My skull is hard enough to smash through rocks. Who am I?",
+        "answer": "Crashhopper"
+    },
+    {
+        "id": 5,
+        "image": "assets/data/aliens/ov/ball_weevil.webp",
+        "question": "I am a small beetle. I spit plasma goo that I roll into a ball, which explodes upon impact. Who am I?",
+        "answer": "Ball Weevil"
+    },
+    {
+        "id": 6,
+        "image": "assets/data/aliens/ov/walkatrout.webp",
+        "question": "I am a slippery fish with legs. I have no real attacks, but I am very hard to catch because I am so slippery. Who am I?",
+        "answer": "Walkatrout"
+    },
+    {
+        "id": 7,
+        "image": "assets/data/aliens/ov/pesky_dust.webp",
+        "question": "I look like a fairy. I can put enemies to sleep with my dust and manipulate their dreams for information. Who am I?",
+        "answer": "Pesky Dust"
+    },
+    {
+        "id": 8,
+        "image": "assets/data/aliens/ov/molestache.webp",
+        "question": "I am a mole with a magnificent mustache. I can shape my mustache into hands, propellers, or fists. Who am I?",
+        "answer": "Mole-Stache"
+    },
+    {
+        "id": 9,
+        "image": "assets/data/aliens/ov/the_worst.webp",
+        "question": "I am indestructible but I feel every bit of pain. I am considered the 'worst' alien to use in a fight. Who am I?",
+        "answer": "The Worst"
+    },
+    {
+        "id": 10,
+        "image": "assets/data/aliens/ov/kickin_hawk.webp",
+        "question": "I am a chicken-hawk fighter. I have powerful kicks and sharp talons, and I am a master of hand-to-hand combat. Who am I?",
+        "answer": "Kickin Hawk"
+    },
+    {
+        "id": 11,
+        "image": "assets/data/aliens/ov/astrodactyl.webp",
+        "question": "I have a jetpack on my back and energy whips. I squawk when I talk and fly through the sky. Who am I?",
+        "answer": "Astrodactyl"
+    },
+    {
+        "id": 12,
+        "image": "assets/data/aliens/ov/bullfrag.webp",
+        "question": "I am an Incursean. I have a long tongue and powerful legs. I used this form to infiltrate Emperor Milleous's ship. Who am I?",
+        "answer": "Bullfrag"
+    },
+    {
+        "id": 13,
+        "image": "assets/data/aliens/ov/atomix.webp",
+        "question": "I am Ben's second most powerful alien. I can create nuclear energy and shout 'HAME-NA HAME-NA!' when I attack. Who am I?",
+        "answer": "Atomix"
+    },
+    {
+        "id": 14,
+        "image": "assets/data/aliens/ov/gutrot.webp",
+        "question": "I am a living chemical factory. I can mix gases in my stomach to create laughing gas, tear gas, or glue. Who am I?",
+        "answer": "Gutrot"
+    },
+    {
+        "id": 15,
+        "image": "assets/data/aliens/ov/whampire.webp",
+        "question": "I am a Vladat from the Anur System. I can hypnotize enemies with my corrupturas but I burn in sunlight. Who am I?",
+        "answer": "Whampire"
+    },
+    {
+        "id": 16,
+        "image": "assets/data/aliens/ov/skurd_slimebiote.webp",
+        "question": "I am not an Omnitrix transformation, but a Slimebiote who attached to the Omnitrix to give Ben weapons. Who am I?",
+        "answer": "Skurd"
+    },
+    {
+        "id": 17,
+        "image": "assets/data/aliens/ov/shocksquatch_ov_redesign.webp",
+        "question": "I returned in Omniverse with a yellow and black suit and a Canadian accent. I control electricity. Who am I?",
+        "answer": "Shocksquatch"
+    },
+    {
+        "id": 18,
+        "image": "assets/data/aliens/ov/atomicx_fusion.webp",
+        "question": "I am a fusion of Alien X and Atomix created by Ben 10,000 using the Biomnitrix. Who am I?",
+        "answer": "Atomic-X"
+    },
+    {
+        "id": 19,
+        "image": "assets/data/aliens/ov/crashocker_fusion.webp",
+        "question": "I am a Biomnitrix fusion of Crashhopper and Shocksquatch. I jump and shock at the same time! Who am I?",
+        "answer": "Crashocker"
+    },
+    {
+        "id": 20,
+        "image": "assets/data/aliens/ov/uprigg_fusion.webp",
+        "question": "I am a fusion of Upgrade and Juryrigg. I don't just upgrade tech, I frantically rebuild it! Who am I?",
+        "answer": "UpRigg"
+    },
+    {
+        "id": 21,
+        "image": "assets/data/aliens/ov/big_chuck_fusion.webp",
+        "question": "I am a fusion of Way Big and Upchuck. I am huge, but I can still eat energy and spit it out. Who am I?",
+        "answer": "Big Chuck"
+    },
+    {
+        "id": 22,
+        "image": "assets/data/aliens/ov/humungoopsaur_fusion.webp",
+        "question": "I am a fusion of Humungousaur and Goop. I am a giant dinosaur, but I am made of sticky slime. Who am I?",
+        "answer": "Humungoopsaur"
+    },
+    {
+        "id": 23,
+        "image": "assets/data/aliens/ov/fourmungousaur_fusion.webp",
+        "question": "I am a fusion of Four Arms and Humungousaur. I have massive muscles and pure brute strength. Who am I?",
+        "answer": "Fourmungousaur"
+    }
+]

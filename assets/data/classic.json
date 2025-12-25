@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "image": "assets/data/aliens/classic/heatblast.webp",
+        "question": "I am a Pyronite from the star Pyros. I can generate intense fire and fly using a flame board. Who am I?",
+        "answer": "Heatblast"
+    },
+    {
+        "id": 2,
+        "image": "assets/data/aliens/classic/wildmutt.webp",
+        "question": "I have no eyes, but my sense of smell and hearing are unmatched. I am a Vulpimancer. Who am I?",
+        "answer": "Wildmutt"
+    },
+    {
+        "id": 3,
+        "image": "assets/data/aliens/classic/diamondhead.webp",
+        "question": "My body is made of organic crystal stronger than diamond. I can shoot shards and regenerate. Who am I?",
+        "answer": "Diamondhead"
+    },
+    {
+        "id": 4,
+        "image": "assets/data/aliens/classic/xlr8.webp",
+        "question": "I am the fastest alien in the classic Omnitrix, capable of running at 500 mph. Who am I?",
+        "answer": "XLR8"
+    },
+    {
+        "id": 5,
+        "image": "assets/data/aliens/classic/grey_matter.webp",
+        "question": "I am small in size but have a massive intellect. I can fix any machine. Who am I?",
+        "answer": "Grey Matter"
+    },
+    {
+        "id": 6,
+        "image": "assets/data/aliens/classic/four_arms.webp",
+        "question": "I have four arms and incredible strength. I can create shockwaves by clapping my hands. Who am I?",
+        "answer": "Four Arms"
+    },
+    {
+        "id": 7,
+        "image": "assets/data/aliens/classic/ripjaws.webp",
+        "question": "I am a Piscciss Volann. I dominate underwater battles with my powerful jaws but need water to breathe. Who am I?",
+        "answer": "Ripjaws"
+    },
+    {
+        "id": 8,
+        "image": "assets/data/aliens/classic/upgrade.webp",
+        "question": "I am a Galvanic Mechamorph. I can merge with technology and upgrade it to a superior state. Who am I?",
+        "answer": "Upgrade"
+    },
+    {
+        "id": 9,
+        "image": "assets/data/aliens/classic/ghostfreak.webp",
+        "question": "I can turn invisible, phase through walls, and reveal a scary true form from under my skin. Who am I?",
+        "answer": "Ghostfreak"
+    },
+    {
+        "id": 10,
+        "image": "assets/data/aliens/classic/cannonbolt.webp",
+        "question": "I can curl into an indestructible ball and roll at high speeds to smash enemies. Who am I?",
+        "answer": "Cannonbolt"
+    },
+    {
+        "id": 11,
+        "image": "assets/data/aliens/classic/wildvine.webp",
+        "question": "I can stretch my vine limbs, throw explosive seeds, and merge with plant life. Who am I?",
+        "answer": "Wildvine"
+    },
+    {
+        "id": 12,
+        "image": "assets/data/aliens/classic/blitzwolfer_benwolf.webp",
+        "question": "I look like a werewolf and possess a powerful sonic howl. Who am I?",
+        "answer": "Blitzwolfer"
+    },
+    {
+        "id": 13,
+        "image": "assets/data/aliens/classic/snareoh_benmummy.webp",
+        "question": "My body is made of bandages that I can control to trap enemies. I resemble a mummy. Who am I?",
+        "answer": "Snare-oh"
+    },
+    {
+        "id": 14,
+        "image": "assets/data/aliens/classic/frankenstrike_benvicktor.webp",
+        "question": "I generate electricity through the coils on my back and have electromagnetic strength. Who am I?",
+        "answer": "Frankenstrike"
+    },
+    {
+        "id": 15,
+        "image": "assets/data/aliens/classic/upchuck.webp",
+        "question": "I can eat almost any matter or energy and spit it back out as an explosive blast. Who am I?",
+        "answer": "Upchuck"
+    },
+    {
+        "id": 16,
+        "image": "assets/data/aliens/classic/ditto.webp",
+        "question": "I can duplicate myself into many copies, but we all share the same pain. Who am I?",
+        "answer": "Ditto"
+    },
+    {
+        "id": 17,
+        "image": "assets/data/aliens/classic/eye_guy.webp",
+        "question": "I have eyes all over my body that can shoot different types of energy beams. Who am I?",
+        "answer": "Eye Guy"
+    },
+    {
+        "id": 18,
+        "image": "assets/data/aliens/classic/way_big.webp",
+        "question": "I am a To'kustar, born in cosmic storms. I am massive and can shoot cosmic rays. Who am I?",
+        "answer": "Way Big"
+    },
+    {
+        "id": 19,
+        "image": "assets/data/aliens/classic/spitter.webp",
+        "question": "I look like a pufferfish and spit high-pressure conductive slime. Who am I?",
+        "answer": "Spitter"
+    },
+    {
+        "id": 20,
+        "image": "assets/data/aliens/classic/buzzshock.webp",
+        "question": "I am a tiny living battery that can travel through electrical currents and duplicate when energized. Who am I?",
+        "answer": "Buzzshock"
+    },
+    {
+        "id": 21,
+        "image": "assets/data/aliens/classic/arctiguana.webp",
+        "question": "I can freeze enemies solid with my ice breath. I helped Ben 10,000 freeze Vilgax. Who am I?",
+        "answer": "Arctiguana"
+    },
+    {
+        "id": 22,
+        "image": "assets/data/aliens/classic/eon.webp",
+        "question": "I am a Chronian with time manipulation powers, appearing in Race Against Time. Who am I?",
+        "answer": "Eon"
+    }
+]

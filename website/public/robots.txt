@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alien10game.vercel.app/sitemap.xml
+
+# Disallow admin or sensitive paths (if any in future)
+Disallow: /admin/
+Disallow: /*.json$

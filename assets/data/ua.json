@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "image": "assets/data/aliens/ua/water_hazard.webp",
+        "question": "I am an Orishan from the Andromeda Galaxy. I have an armored exoskeleton and shoot pressurized water. Who am I?",
+        "answer": "Water Hazard"
+    },
+    {
+        "id": 2,
+        "image": "assets/data/aliens/ua/terraspin.webp",
+        "question": "I resemble a turtle. I can withdraw into my shell and spin to create massive windstorms. Who am I?",
+        "answer": "Terraspin"
+    },
+    {
+        "id": 3,
+        "image": "assets/data/aliens/ua/nrg.webp",
+        "question": "I am pure radioactive energy contained in a heavy Russian-accented suit. 'N-R-G is G-O-O-D!' Who am I?",
+        "answer": "NRG"
+    },
+    {
+        "id": 4,
+        "image": "assets/data/aliens/ua/armodrillo.webp",
+        "question": "I have jackhammer pistons on my elbows and can trigger earthquakes. Who am I?",
+        "answer": "Armodrillo"
+    },
+    {
+        "id": 5,
+        "image": "assets/data/aliens/ua/ampfibian.webp",
+        "question": "I am a jellyfish-like alien that can swim through air, read minds, and shoot electricity. Who am I?",
+        "answer": "AmpFibian"
+    },
+    {
+        "id": 6,
+        "image": "assets/data/aliens/ua/fasttrack.webp",
+        "question": "I am a Citrakayah. I am super fast and strong, often compared to XLR8. Who am I?",
+        "answer": "Fasttrack"
+    },
+    {
+        "id": 7,
+        "image": "assets/data/aliens/ua/clockwork.webp",
+        "question": "I am a Chronosapien. I can slow down time or age objects to dust with the key on my head. Who am I?",
+        "answer": "Clockwork"
+    },
+    {
+        "id": 8,
+        "image": "assets/data/aliens/ua/eatle.webp",
+        "question": "I look like a robotic beetle. I eat metal and convert it into laser beams shot from my horn. Who am I?",
+        "answer": "Eatle"
+    },
+    {
+        "id": 9,
+        "image": "assets/data/aliens/ua/juryrigg.webp",
+        "question": "I am a manic goblin who loves to break machines and rebuild them into crazy weapons in seconds. Who am I?",
+        "answer": "Juryrigg"
+    },
+    {
+        "id": 10,
+        "image": "assets/data/aliens/ua/shocksquatch_heroes_united.webp",
+        "question": "I first appeared in the 'Heroes United' crossover with Generator Rex. I am an electric yeti. Who am I?",
+        "answer": "Shocksquatch"
+    },
+    {
+        "id": 11,
+        "image": "assets/data/aliens/ua/four_arms_ua_gladiator_style.webp",
+        "question": "I returned in Ultimate Alien wearing a gold-studded gladiator outfit to fight Looma Red Wind. Who am I?",
+        "answer": "Four Arms"
+    },
+    {
+        "id": 12,
+        "image": "assets/data/aliens/ua/heatblast_ua_dark_rock.webp",
+        "question": "I returned in the UA intro with a darker, rocky charcoal skin tone. Who am I?",
+        "answer": "Heatblast"
+    },
+    {
+        "id": 13,
+        "image": "assets/data/aliens/ua/ripjaws_ua_catfish_style.webp",
+        "question": "I returned with a new look resembling a catfish, with whiskers and huge teeth. Who am I?",
+        "answer": "Ripjaws"
+    },
+    {
+        "id": 14,
+        "image": "assets/data/aliens/ua/xlr8_heroes_united_style.webp",
+        "question": "I appeared briefly in the crossover event looking sleek and blue. Who am I?",
+        "answer": "XLR8"
+    },
+    {
+        "id": 15,
+        "image": "assets/data/aliens/classic/eon.webp",
+        "question": "I am an evil version of Ben from an alternate timeline. I returned in Ultimate Alien to destroy all Bens. Who am I?",
+        "answer": "Eon"
+    }
+]
