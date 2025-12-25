@@ -71,7 +71,7 @@ function App() {
             <a href="/#interface" className="nav-link">Interface</a>
             <Link to="/privacy" className="nav-link">Legal</Link>
           </nav>
-          <button className="btn-primary">Initialize Check</button>
+          <a href="https://play.google.com/store/apps/details?id=com.nexera.ben10" target="_blank" rel="noopener noreferrer" className="btn-primary red-glow">Initialize Check</a>
         </div>
       </header>
 
@@ -130,8 +130,7 @@ const Home = ({ heroIndex, heroImages }) => {
               From the streets of Bellwood to the Null Void, prove you are worthy of the watch.
             </p>
             <div className="hero-actions">
-              <button className="btn-primary">Download App</button>
-              <button className="btn-ghost">View Specs</button>
+              <a href="https://play.google.com/store/apps/details?id=com.nexera.ben10" target="_blank" rel="noopener noreferrer" className="btn-primary">Download App</a>
             </div>
           </div>
           <div className="hero-visual">

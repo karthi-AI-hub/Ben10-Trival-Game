@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alien10game.vercel.app/sitemap.xml
+Sitemap: https://ben10game.vercel.app/sitemap.xml
 
 # Disallow admin or sensitive paths (if any in future)
 Disallow: /admin/
