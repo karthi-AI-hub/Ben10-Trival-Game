@@ -8,6 +8,11 @@ class PrefsService {
   static const String keyTotalWrong = 'total_wrong';
   static const String keyTotalLivesLost = 'total_lives_lost';
   static const String keySoundEnabled = 'sound_enabled';
+  static const String keyCoins = 'user_coins';
+
+  static const String keyTutorialShown = 'tutorial_shown';
+
+
 
   static Future<void> saveLevel(int level) async {
     final prefs = await SharedPreferences.getInstance();
@@ -64,4 +69,49 @@ class PrefsService {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(keySoundEnabled) ?? true;
   }
+
+  static Future<void> saveCoins(int coins) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(keyCoins, coins);
+  }
+
+  static Future<int> getCoins() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(keyCoins) ?? 0;
+  }
+
+  static Future<void> saveTutorialShown(bool shown) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(keyTutorialShown, shown);
+  }
+
+  static Future<bool> isTutorialShown() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(keyTutorialShown) ?? false;
+  }
+
+  static const String keyShareCount = 'share_count';
+
+  static Future<void> saveShareCount(int count) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(keyShareCount, count);
+  }
+
+  static Future<int> getShareCount() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(keyShareCount) ?? 0;
+  }
+
+  static const String keyLastRewardDate = 'last_reward_date';
+
+  static Future<void> saveLastRewardDate(int timestamp) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(keyLastRewardDate, timestamp);
+  }
+
+  static Future<int> getLastRewardDate() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(keyLastRewardDate) ?? 0;
+  }
 }
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../providers/game_provider.dart';
+// import '../services/notification_service.dart';
 import '../theme/app_colors.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -70,39 +71,78 @@ class SettingsScreen extends StatelessWidget {
                   _showResetDialog(context);
                 },
               ),
-              const Divider(color: Colors.white10),
-              ListTile(
-                leading: const Icon(Icons.privacy_tip_rounded, color: Colors.blue),
-                title: const Text('Plumber Privacy', style: TextStyle(color: Colors.white)),
-                trailing: const Icon(Icons.open_in_new_rounded, size: 20, color: Colors.grey),
+               const Divider(color: Colors.white10),
+               
+               // Community & Rewards Section
+                const Padding(
+                  padding: EdgeInsets.only(left: 16.0, top: 10, bottom: 5),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text("Community & Rewards", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey)),
+                  ),
+                ),
+                ListTile(
+                   leading: const Icon(Icons.monetization_on, color: Colors.amber),
+                   title: Text('My Coins: ${game.coins}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                   subtitle: const Text('Use coins for hints and power-ups!', style: TextStyle(color: Colors.grey)),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.public, color: Colors.blue),
+                  title: const Text('Official Website', style: TextStyle(color: Colors.white)),
+                  subtitle: const Text('Visit ben10trivia.vercel.app', style: TextStyle(color: Colors.grey)),
+                  trailing: const Icon(Icons.open_in_new, size: 20, color: Colors.grey),
+                  onTap: () => game.launchWebsite(),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.share, color: Colors.green),
+                  title: const Text('Share & Earn', style: TextStyle(color: Colors.white)),
+                  subtitle: game.shareCount < 5 
+                      ? Text('Earn 100 coins (${game.shareCount}/5 claimed)', style: const TextStyle(color: Colors.grey))
+                      : const Text('Max rewards claimed (Thank you!)', style: const TextStyle(color: Colors.greenAccent)),
+                  trailing: game.shareCount < 5 
+                      ? Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Text('+100', style: TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold))
+                        )
+                      : const Icon(Icons.check_circle, color: Colors.green),
+                  onTap: () => game.shareApp(),
+                ),
+                const Divider(color: Colors.white10),
+                ListTile(
+                  leading: const Icon(Icons.privacy_tip_outlined, color: Colors.blue),
+                  title: const Text('Privacy Policy', style: TextStyle(color: Colors.white)),
+                  trailing: const Icon(Icons.open_in_new, size: 20, color: Colors.grey),
                 onTap: () => _launchUrl(context, 'https://ben10trivia.vercel.app/privacy'),
-              ),
-              ListTile(
-                leading: const Icon(Icons.description_rounded, color: Colors.blue),
-                title: const Text('Galactic Terms', style: TextStyle(color: Colors.white)),
-                trailing: const Icon(Icons.open_in_new_rounded, size: 20, color: Colors.grey),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.description_outlined, color: Colors.blue),
+                  title: const Text('Terms & Conditions', style: TextStyle(color: Colors.white)),
+                  trailing: const Icon(Icons.open_in_new, size: 20, color: Colors.grey),
                 onTap: () => _launchUrl(context, 'https://ben10trivia.vercel.app/terms'),
-              ),
-              const Spacer(),
-              const Text(
-                'BEN 10: ALIEN TRIVIA',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: AppColors.primary,
-                  letterSpacing: 2,
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'Fan-made contribution to the Ben 10 Universe.\nAll assets are property of their respective owners.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 12,
+                const SizedBox(height: 20),
+                const Text(
+                  'About Ben 10 Trivia',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: AppColors.primary,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 40),
+                const SizedBox(height: 10),
+                const Text(
+                  'This is a fan-made app. All characters and images are property of their respective owners. No copyright infringement intended.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                  ),
+                ),
+                const SizedBox(height: 40),
             ],
           ),
         ),

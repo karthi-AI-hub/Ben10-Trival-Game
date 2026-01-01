@@ -3,8 +3,11 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/alien.dart';
 import '../services/prefs_service.dart';
+import '../services/game_services_helper.dart';
 
 class Arena {
   final String name;
@@ -53,6 +56,7 @@ class GameProvider with ChangeNotifier {
   int _selectedArenaIndex = 0;
   int _currentLevel = 1;
   int _lives = 5;
+  int _coins = 0;
   int _totalCorrect = 0;
   int _totalWrong = 0;
   int _totalLivesLost = 0;
@@ -66,6 +70,7 @@ class GameProvider with ChangeNotifier {
   int get selectedArenaIndex => _selectedArenaIndex;
   int get currentLevel => _currentLevel;
   int get lives => _lives;
+  int get coins => _coins;
   int get totalCorrect => _totalCorrect;
   int get totalWrong => _totalWrong;
   int get totalLivesLost => _totalLivesLost;
@@ -107,13 +112,26 @@ class GameProvider with ChangeNotifier {
       if (_currentLevel == 0) _currentLevel = 1;
 
       _lives = await PrefsService.getLives();
+      _coins = await PrefsService.getCoins(); // You might need to add getCoins to PrefsService if not there, or use shared prefs directly
       _soundEnabled = await PrefsService.isSoundEnabled();
+      _shareCount = await PrefsService.getShareCount();
+    
+    await _checkDailyRewardStatus();
 
-      // Load stats
+    // Load stats
       final stats = await PrefsService.getStats();
       _totalCorrect = stats['correct']!;
       _totalWrong = stats['wrong']!;
       _totalLivesLost = stats['livesLost']!;
+
+      // Attempt Cloud Sync
+      await GameServicesHelper.signIn();
+      await _syncFromCloud();
+      
+      if (_totalCorrect > 0) {
+        await GameServicesHelper.submitScore(score: _totalCorrect);
+      }
+
 
     } catch (e) {
       debugPrint('Critical error in initGame: $e');
@@ -242,6 +260,7 @@ class GameProvider with ChangeNotifier {
       wrong: _totalWrong,
       livesLost: _totalLivesLost,
     );
+    await _saveToCloud(); 
   }
 
   Future<void> restoreLives(int amount) async {
@@ -263,6 +282,7 @@ class GameProvider with ChangeNotifier {
     _totalCorrect = 0;
     _totalWrong = 0;
     _totalLivesLost = 0;
+    _shareCount = 0;
     _arenaProgress = {0: 1, 1: 0, 2: 0, 3: 0};
 
     final prefs = await SharedPreferences.getInstance();
@@ -272,6 +292,184 @@ class GameProvider with ChangeNotifier {
     }
     await PrefsService.saveLives(_lives);
     await _saveCurrentStats();
+      notifyListeners();
+  }
+
+  Future<void> _syncFromCloud() async {
+    final data = await GameServicesHelper.loadFromCloud();
+    if (data != null) {
+      _lives = data['lives'] ?? _lives;
+      _coins = data['coins'] ?? _coins;
+      _selectedArenaIndex = data['selectedArena'] ?? _selectedArenaIndex;
+      
+      if (data['arenaProgress'] != null) {
+        Map<String, dynamic> progressMap = data['arenaProgress'];
+        _arenaProgress = progressMap.map((k, v) => MapEntry(int.parse(k), v as int));
+      }
+
+      if (data['stats'] != null) {
+        _totalCorrect = data['stats']['correct'] ?? _totalCorrect;
+        _totalWrong = data['stats']['wrong'] ?? _totalWrong;
+        _totalLivesLost = data['stats']['livesLost'] ?? _totalLivesLost;
+      }
+      
+      notifyListeners();
+    }
+  }
+
+  Future<void> _saveToCloud() async {
+    await GameServicesHelper.saveToCloud(
+      _lives,
+      _selectedArenaIndex,
+      _arenaProgress,
+      {
+        'correct': _totalCorrect,
+        'wrong': _totalWrong,
+        'livesLost': _totalLivesLost,
+      }
+    );
+    
+    // Also submit high score
+    await GameServicesHelper.submitScore(score: _totalCorrect);
+
+  }
+
+  Future<void> addCoins(int amount) async {
+    _coins += amount;
+    await PrefsService.saveCoins(_coins); // Need to implement this in PrefsService
+    notifyListeners();
+    _saveToCloud();
+  }
+
+  // --- Daily Rewards & Ads Logic ---
+
+  bool _claimedDaily = false;
+  int _adsWatchedToday = 0;
+  // DateTime? _lastAdWatchTime;
+
+  bool get canClaimDailyReward => !_claimedDaily;
+  int get adsWatchedToday => _adsWatchedToday;
+  
+  // Simple ladder: 100, 200, 300...
+  int get nextAdReward => (_adsWatchedToday + 1) * 100;
+
+  bool get isPGSSignedIn => true; 
+
+  Future<void> signInPGS() async {
+    await GameServicesHelper.signIn();
+  }
+  
+  Future<void> _checkDailyRewardStatus() async {
+    final lastDateMillis = await PrefsService.getLastRewardDate();
+    if (lastDateMillis == 0) {
+      _claimedDaily = false;
+    } else {
+      final lastDate = DateTime.fromMillisecondsSinceEpoch(lastDateMillis).toLocal();
+      final now = DateTime.now();
+      
+      // Check if it's the same day
+      if (lastDate.year == now.year && lastDate.month == now.month && lastDate.day == now.day) {
+        _claimedDaily = true;
+      } else {
+        _claimedDaily = false;
+      }
+    }
     notifyListeners();
   }
+
+  Future<void> claimDailyReward() async {
+    if (_claimedDaily) return;
+    
+    _claimedDaily = true;
+    _coins += 50;
+    await PrefsService.saveCoins(_coins);
+    await PrefsService.saveLastRewardDate(DateTime.now().millisecondsSinceEpoch);
+    notifyListeners();
+    _saveToCloud();
+  }
+
+  Future<int> watchAdForCoins() async {
+    int reward = nextAdReward;
+    _coins += reward;
+    _adsWatchedToday++;
+    await PrefsService.saveCoins(_coins);
+    notifyListeners();
+    _saveToCloud();
+    return reward;
+  }
+
+  // --- Hint System ---
+  Future<List<String>?> buyHint5050(List<String> currentChoices) async {
+    if (_coins >= 50 && currentAlien != null) {
+      _coins -= 50;
+      await PrefsService.saveCoins(_coins);
+      notifyListeners();
+      _saveToCloud();
+
+      // Filter out wrong answers to leave Correct + 1 Wrong
+      String correctAnswer = currentAlien!.answer;
+      List<String> wrongChoices = currentChoices.where((c) => c != correctAnswer).toList();
+      wrongChoices.shuffle();
+      
+      // Keep correct ans + 1 random wrong
+      List<String> hintChoices = [correctAnswer];
+      if (wrongChoices.isNotEmpty) {
+        hintChoices.add(wrongChoices.first);
+      }
+      // Re-shuffle to hide position
+      hintChoices.shuffle();
+      
+      return hintChoices;
+    }
+    return null;
+  }
+
+  Future<bool> buyFullLives() async {
+    if (_lives >= 5) return false;
+    if (_coins >= 200) {
+      _coins -= 200;
+      _lives = 5;
+      await PrefsService.saveCoins(_coins);
+      await PrefsService.saveLives(_lives);
+      notifyListeners();
+      _saveToCloud();
+      return true;
+    }
+    return false;
+  }
+
+  // --- Social & Sharing ---
+  int _shareCount = 0;
+  int get shareCount => _shareCount;
+
+  Future<void> launchWebsite() async {
+    final Uri url = Uri.parse('https://ben10game.vercel.app'); 
+    try {
+      if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+        debugPrint("Could not launch $url");
+      }
+    } catch (e) {
+      debugPrint("Error launching URL: $e");
+    }
+  }
+
+  Future<void> shareApp() async {
+    try {
+      await Share.share('Check out Ben 10 Trivia! Prove your alien knowledge! ⌚👽\nDownload now: https://ben10game.vercel.app');
+      
+      // Reward logic
+      if (_shareCount < 5) {
+        _shareCount++;
+        _coins += 100;
+        await PrefsService.saveShareCount(_shareCount);
+        await PrefsService.saveCoins(_coins);
+        notifyListeners();
+        _saveToCloud();
+      }
+    } catch (e) {
+      debugPrint("Error sharing: $e");
+    }
+  }
 }
+
+

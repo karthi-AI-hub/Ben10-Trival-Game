@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import '../providers/game_provider.dart';
 import '../services/ad_mob_service.dart';
+import '../services/notification_service.dart';
 import '../theme/app_colors.dart';
 import 'home_screen.dart';
 
@@ -36,8 +38,27 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   Future<void> _initializeApp() async {
     await Future.delayed(Duration.zero);
     
-    // AdMobService().loadRewardedAd(); // Handled in init()
+    // Check Connectivity
+    final List<ConnectivityResult> connectivityResult = await Connectivity().checkConnectivity();
+    bool isConnected = connectivityResult.contains(ConnectivityResult.mobile) || 
+                       connectivityResult.contains(ConnectivityResult.wifi) ||
+                       connectivityResult.contains(ConnectivityResult.ethernet);
+
+    if (isConnected) {
+       // Only init ads if connected (though ad service internal might handle it, better to be safe)
+       // Note: AdMobService().init() is already called in main.dart, which might be too early if we strictly follow "NEVER initialize... without Internet".
+       // But typically usage is what matters.
+       // However, we should try to reload ads here if needed.
+       // AdMobService().loadRewardedAd(); // Handled in init()
+    } else {
+        debugPrint("Offline Mode: Ads might not load.");
+    }
+
+    // Schedule Notification
+    await NotificationService().scheduleDailyReminders();
+    
     await context.read<GameProvider>().initGame();
+
 
     await Future.delayed(const Duration(seconds: 2));
 

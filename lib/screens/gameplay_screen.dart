@@ -408,6 +408,55 @@ class _GameplayScreenState extends State<GameplayScreen> with TickerProviderStat
                         ),
                         
                         const Spacer(),
+
+                        // Hint Section
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: Consumer<GameProvider>(
+                            builder: (context, game, child) {
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  if (_choices.length > 2) ...[
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: AppColors.surface,
+                                        borderRadius: BorderRadius.circular(20),
+                                        border: Border.all(color: AppColors.accent.withOpacity(0.5)),
+                                      ),
+                                      child: TextButton.icon(
+                                        onPressed: () async {
+                                          if (game.coins < 50) {
+                                            ScaffoldMessenger.of(context).showSnackBar(
+                                              const SnackBar(content: Text('Not enough coins! Need 50. 🪙'), duration: Duration(seconds: 1)),
+                                            );
+                                            return;
+                                          }
+                                          
+                                          final newChoices = await game.buyHint5050(_choices);
+                                          if (newChoices != null) {
+                                            setState(() {
+                                              _choices = newChoices;
+                                            });
+                                            if (context.mounted) {
+                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                const SnackBar(content: Text('Omnitrix Data Decrypted! 50/50 Applied. 🔓')),
+                                              );
+                                            }
+                                          }
+                                        },
+                                        icon: const Icon(Icons.lightbulb_rounded, color: Colors.yellow),
+                                        label: Text('HINT (50)', style: TextStyle(color: Colors.white.withOpacity(0.9), fontWeight: FontWeight.bold)),
+                                      ),
+                                    ),
+                                  ] else ... [
+                                     const Text("Data Decrypted", style: TextStyle(color: Colors.grey, fontStyle: FontStyle.italic)),
+                                  ]
+                                ],
+                              );
+                            }
+                          ),
+                        ),
                         
                         // Choices Grid
                         GridView.builder(

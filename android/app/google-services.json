@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "94389063480",
+    "project_id": "ben10game",
+    "storage_bucket": "ben10game.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94389063480:android:764ce40540ebedd9a8bbcd",
+        "android_client_info": {
+          "package_name": "com.nexera.ben10"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxX0go0d-5PHZWrFOn9BGy5ikB3HxEhTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
